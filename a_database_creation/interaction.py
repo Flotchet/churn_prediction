@@ -71,7 +71,13 @@ def modify_db_from_df(df : pd.DataFrame,
     ------
     FileNotFoundError
         If the database is not found
+
+    ValueError
+        If the database is the production database
     """
+
+    if database == "poduction.db":
+        raise ValueError("You are not allowed to access the production database")
     
     database = os.path.join(database_path, database_name)
 
