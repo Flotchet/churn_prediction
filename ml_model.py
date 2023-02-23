@@ -1,7 +1,5 @@
 import sqlite3
 import pandas
-import os
-import warnings
 import sqlite3
 import pandas
 import pickle
@@ -10,12 +8,10 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import LabelBinarizer
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
 
-def create_ml_model(database_path : str = "/Users/emiliagenadieva/Desktop/PythonLessons/MLLessons/include/Work/Clusters",
+def create_ml_model(database_path : str = "a_database_creation/database",
                     database_name : str = "database.db") -> None:
 
     database = os.path.join(database_path, database_name)
@@ -23,7 +19,7 @@ def create_ml_model(database_path : str = "/Users/emiliagenadieva/Desktop/Python
     conn = sqlite3.connect(database)
 
     # code added for ml model
-    df = pandas.read_sql('SELECT Gender, Education_Level, Marital_Status, Income_Category, Card_Category, Credit_Limit, Avg_Utilization_Ratio FROM bank_churners', conn)
+    df = pandas.read_sql('SELECT Total_Relationship_Count, Credit_Limit, Total_Revolving_Bal, Avg_Open_To_Buy, Total_Trans_Amt, Total_Trans_Ct FROM bank_churners', conn)
     y = pandas.read_sql('SELECT Attrition_Flag FROM bank_churners', conn)
     conn.close()
     
@@ -36,27 +32,28 @@ def create_ml_model(database_path : str = "/Users/emiliagenadieva/Desktop/Python
     preprocessor = ColumnTransformer(transformers=[
             ('num', numeric_transformer, numeric_features),
             ('cat', categorical_transformer, categorical_features)])
-    clf = Pipeline(steps=[('preprocessor', preprocessor),('classifier',  DecisionTreeClassifier(max_depth=6, random_state=1))])
+    clf = Pipeline(steps=[('preprocessor', preprocessor),('classifier',  DecisionTreeClassifier(max_depth=12, random_state=1))])
     X = df
     y = y
     clf.fit(X, y)
     print(clf.score(X,y))
     
     # Saving model to pickle file  Dump function is used to write the object into the created file in byte format
-    with open("model-name.pkl", "wb") as file:
+    with open("churn_model.pkl", "wb") as file:
         pickle.dump(clf, file)
         
-    # The model has now been deserialized, next is to make use of it as you normally would.
-    frame = {'Gender':'F', 'Education_Level':'Graduate', 'Marital_Status':'Single', 'Income_Category':'Less than $40K', 'Card_Category':'Blue', 'Credit_Limit':8256.0,'Avg_Utilization_Ratio':0.9}
+    '''
+    frame = {'Total_Relationship_Count':5, 'Credit_Limit':12691.0 ,'Total_Revolving_Bal':777, 'Avg_Open_To_Buy':11914.0, 'Total_Trans_Amt':1144, 'Total_Trans_Ct':42}
 
     data_frame = pandas.DataFrame([frame])
     # Opening saved model
-    with open("model-name.pkl", "rb") as file:
+    with open("churn_model.pkl", "rb") as file:
         model = pickle.load(file)
 
     prediction = model.predict(data_frame)
     print("The result is",prediction[0])
-
+    '''
+    
     return None
 
 
