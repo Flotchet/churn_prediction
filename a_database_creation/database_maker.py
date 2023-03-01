@@ -4,6 +4,10 @@ import pandas
 import os
 import warnings
 
+#import for making a NoSQL database
+import pymongo
+from pymongo import MongoClient
+
 def create_database(csv_file : str = "a_database_creation/data/BankChurners.csv", 
                     database_path : str = "a_database_creation/database",
                     database_name : str = "database.db",
@@ -58,6 +62,31 @@ def create_database(csv_file : str = "a_database_creation/data/BankChurners.csv"
     df = pandas.read_csv(csv_file)
 
     df.to_sql("bank_churners", conn, if_exists="replace", index=False)
+
+    #make a table USER with two column ID, Password, Password_key
+    #ID is the primary key
+    #Password is a string
+    #Password_key is a string
+    #ID is an integer
+    #ID is autoincremented
+    conn.execute("""CREATE TABLE USER (
+                    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Password TEXT NOT NULL,
+                    Password_key TEXT NOT NULL
+                    );""")
+
+    #create a COMMENTS table with ID, USER_ID, Result, Comments 
+    #ID is the primary key
+    #USER_ID is a foreign key
+    #Result is a string
+    #Comments is a string
+    conn.execute("""CREATE TABLE COMMENTS (
+                    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    USER_ID INTEGER NOT NULL,
+                    Result TEXT NOT NULL,
+                    Comments TEXT NOT NULL,
+                    FOREIGN KEY(USER_ID) REFERENCES USER(ID)
+                    );""")
 
     conn.close()
 

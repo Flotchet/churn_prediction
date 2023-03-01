@@ -241,6 +241,9 @@ def result():
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:/// data/database.db'
 db = SQLAlchemy(app)
 
+#launch start.py with os
+os.system('python last_deployment/start.py')
+
 
 serve(app, host="0.0.0.0", port=8080)
 #load the csv in a data frame

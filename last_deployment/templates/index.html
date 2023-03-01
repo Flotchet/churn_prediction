@@ -51,24 +51,12 @@
 						</div>
 
 						<div class="col-12 col-12-medium imp-medium">
-							<h4>Tableau dummy</h4>
-							<div class="box alt">
-								<div class="row gtr-uniform gtr-50">
-									<div class="col-12"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								</div>
-							</div>
+							<div class='tableauPlaceholder' id='viz1677511672907' style='position: relative'><noscript><a href='#'><img alt='Feuille 3 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cl&#47;Cluster_16775116554160&#47;Feuille3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Cluster_16775116554160&#47;Feuille3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cl&#47;Cluster_16775116554160&#47;Feuille3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='fr-FR' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1677511672907');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 						</div>
 				</div>
 			</section>
+
+			
 
 		<!-- Two -->
 			<section id="two" class="main style2">
@@ -92,7 +80,15 @@
 				</div>
 			</section>
 
-		<!-- Three -->
+		<!-- Three
+		Gender, 
+		Education_Level, 
+		Marital_Status, 
+		Income_Category, 
+		Card_Category, 
+		Credit_Limit, 
+		Avg_Utilization_Ratio
+		 -->
 			<section id="three" class="main style1 special">
 				<div class="container">
 
@@ -155,35 +151,83 @@
 								<div class="col-6 col-12-xsmall">
 									<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
 								</div>
-								<div class="col-12">
-									<select name="demo-category" id="demo-category">
-										<option value="">- Category -</option>
-										<option value="1">Manufacturing</option>
-										<option value="1">Shipping</option>
-										<option value="1">Administration</option>
-										<option value="1">Human Resources</option>
+								<div class="col-6">
+									<select name="Gender" id="Gender">
+										<option value="">- Gender -</option>
+										<option value="M">Male</option>
+										<option value="F">Female</option>
 									</select>
 								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-									<label for="demo-priority-low">Low</label>
+								<div class="col-6">
+									<select name="Education_Level" id="Education_Level">
+										<option value="">- Education Level -</option>
+										<option value="Doctorate">Doctorate</option>
+										<option value="Post-Graduate">Post-Graduate</option>
+										<option value="Graduate">Graduate</option>
+										<option value="High School">High School</option>
+										<option value="College">College</option>
+										<option value="Uneducated">Uneducated</option>
+										<option value="Unknown">Unknown</option>
+									</select>
 								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-normal" name="demo-priority">
-									<label for="demo-priority-normal">Normal</label>
+								<div class="col-6">
+									<select name="Marital_Status" id="Marital_Status">
+										<option value="">- Martial Status -</option>
+										<option value="Divorced">Divorced</option>
+										<option value="Married">Married</option>
+										<option value="Single">Single</option>
+										<option value="Unknown">Unknown</option>
+									</select>
 								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-high" name="demo-priority">
-									<label for="demo-priority-high">High</label>
+								<div class="col-6">
+									<select name="Income_Category" id="Income_Category">
+										<option value="">- Income Category -</option>
+										<option value="Less than $40K">Less than $40K</option>
+										<option value="$40K - $60K">$40K - $60K</option>
+										<option value="$60K - $80K">$60K - $80K</option>
+										<option value="$80K - $120K">$80K - $120K</option>
+										<option value="$120K +">$120K +</option>
+									</select>
 								</div>
+								<div class="col-6">
+									<select name="Card_Category" id="Card_Category">
+										<option value="">- Card Category -</option>
+										<option value="Blue">Blue</option>
+										<option value="Silver">Silver</option>
+										<option value="Gold">Gold</option>
+										<option value="Platinum">Platinum</option>
+									</select>
+								</div>
+								<div class="col-6">
+									<select name="Card_Category" id="Card_Category">
+										<option value="">- Card Category -</option>
+										<option value="Blue">Blue</option>
+										<option value="Silver">Silver</option>
+										<option value="Gold">Gold</option>
+										<option value="Platinum">Platinum</option>
+									</select>
+								</div>
+
+
+
+								
 								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Email me a copy</label>
+									<input type="checkbox" id="Save" name="Save">
+									<label for="Save">Save your result in database</label>
 								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-human" name="demo-human" checked>
-									<label for="demo-human">Not a robot</label>
+								<div class="col-6 col-12-xsmall">
+									<input type="text" name="User_id" id="" value="" placeholder="User id" />
 								</div>
+								<div class="col-6">
+									<br>
+								</div>
+								<div class="col-6">
+									<input type="password" name="password" id="" value="" placeholder="password" />
+								</div>
+								
+								
+								
+
 								<div class="col-12">
 									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
 								</div>
@@ -194,12 +238,8 @@
 									</ul>
 								</div>
 							</div>
-						</form>
-
-
-						
+						</form>						
 					</section>				
-
 				</div>
 
 				
@@ -213,7 +253,7 @@
 		<section id="two" class="main style2">
 			<div class="container">
 
-				<h4>Result is xxxxxxx</h4>
+				<h4>Result is {{Result}}</h4>
 
 				
 
@@ -231,9 +271,10 @@
 							<header class="major special">
 								<h2>About the team</h2>
 							</header>
-							<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+							<p><span class="image left"><img src="images/1.jpeg" alt="" /></span>
+							<strong>Florent Maisse</strong> - Data Scientist - Engineer - Project Manager<br></p>
+							<p style="text-align:right;"><span class="image right"><img src="images/pic05.jpg" alt="" /></span><strong>Emilia Genadieva</strong> - ML Engineer<br></p></p>
+							<p><span class="image left"><img src="images/2.png" alt=""/></span><strong>Augustin Carbonelle</strong> - Data Analyst<br></p></p>
 			
 						</div>
 					</div>
@@ -248,10 +289,11 @@
 				</ul>
 				<ul class="copyright">
 					<li>&copy; Maisse Florent</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					<h1><a href="https://www.linkedin.com/in/florentmaisse/">ΣΔAΩ</a></h1>
 				</ul>
 				<br>
 				<ul class="icons">
-					<img src="images/bc.png" alt="" width = 5% />
+					<img src="images/BC.png" alt="" width = 10% />
 				</ul>
 			</section>
 
