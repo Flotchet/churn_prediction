@@ -92,7 +92,7 @@ def result():
 
         #predict
         if clf.predict(data)[0] != 'Attrited Customer':
-            r = ' not'
+            r = 'not '
 
         return render_template('index.html', result=Markup(f"<h1> The client is {r}likely to churn </h1>") + errors)
 
