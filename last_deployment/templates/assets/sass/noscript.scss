@@ -6,27 +6,51 @@
 @import 'libs/html-grid';
 
 /*
-	Photon by HTML5 UP
+	Astral by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Header */
+/* Wrapper */
 
-	body.is-preload {
-		#header {
-			.inner {
-				@include vendor('transform', 'none');
-				opacity: 1;
+	#wrapper {
+		opacity: 1 !important;
+	}
 
-				.actions {
-					@include vendor('transform', 'none');
-					opacity: 1;
-				}
+/* Nav */
+
+	#nav {
+		a {
+			opacity: 1.0;
+
+			&:before,
+			&:after {
+				display: none;
 			}
 
-			&:after {
-				opacity: 0;
+			span {
+				top: 0;
+				opacity: 1.0;
+
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+
+/* Main */
+
+	#main {
+		background: none;
+		box-shadow: none;
+
+		> .panel {
+			background: #ffffff;
+			margin-bottom: 2em;
+
+			&:last-child {
+				margin-bottom: 0;
 			}
 		}
 	}
