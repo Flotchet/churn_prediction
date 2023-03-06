@@ -80,8 +80,8 @@ def form():
 
 @app.route('/', methods=['POST', 'post'])
 def result():
-
-    #get the data from the form
+ 
+    #get the data from the form 
     errors = ""
     r = ""
     if request.form['ID'] != "" and request.form['ID'] != None and request.form['password'] != "" and request.form['password'] != None:
